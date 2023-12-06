@@ -85,13 +85,13 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-#tripForm{
+.add-trip{
     background-color: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 3px rgba(116, 28, 28, 0.292);
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 80px;
+    margin-bottom: 4000px;
 }
 #map {
     height: 400px;
