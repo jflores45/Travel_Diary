@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Angeles Travel Guide</title>
+    <link rel="stylesheet" href="static/css/style_2.css">
+    <!-- Add your CSS link or style here -->
+</head>
+<body>
+
+<header>
+    <h1>Los Angeles</h1>
+</header>
+
+<main>
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img class="img" src="images/LA1.png" alt="Description of Image 1">
+        </div>
+
+        <div class="mySlides">
+            <img class="img" src="images/LA2.png" alt="Description of Image 2">
+        </div>
+
+        <div class="mySlides">
+            <img class="img" src="images/LA3.png" alt="Description of Image 3">
+        </div>
+        <div class="mySlides">
+            <img class="img" src="images/LA4.png" alt="Description of Image 3">
+        </div>
+
+        <!-- Add more slides as needed -->
+
+        <!-- Navigation dots -->
+        <div style="text-align: center; margin-top: 20px;">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <!-- Add more dots for additional slides -->
+        </div>
+    </div>
+    <br>
+    <div>
+        <h2>Best Places to Visit</h2>
+        <ul>
+            <li>Santa Monica Pier</li>
+            <li>Hollywood Walk of Fame</li>
+            <li>Griffith Observatory</li>
+            <li>Los Angeles County Museum of Art (LACMA)</li>
+            <!-- Add more places as needed -->
+        </ul>
+    </div>
+
+    <div>
+        <h2>Best Restaurants</h2>
+        <ul>
+            <li>In-N-Out Burger</li>
+            <li>The Ivy</li>
+            <li>Grand Central Market</li>
+            <li>Bottega Louie</li>
+            <!-- Add more restaurants as needed -->
+        </ul>
+    </div>
+
+    <div>
+        <h2>Local Cuisine</h2>
+    <ul>
+        <li>Explore diverse culinary delights in LA, from street tacos to gourmet fusion cuisine.</li>
+    </ul>
+    </div>
+
+    <!-- Add more sections for attractions, activities, etc. -->
+    <script>
+        // JavaScript for the image slideshow
+        let slideIndex = 0;
+        showSlides();
+    
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+    
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+    
+            slideIndex++;
+    
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+    
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+    
+            setTimeout(showSlides, 3000); // Change slide every 2 seconds
+        }
+    </script>
+</main>
+
+</body>
+</html>

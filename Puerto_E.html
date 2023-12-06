@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puerto Escondido, Oaxaca</title>
+    <link rel="stylesheet" href="static/css/style_2.css">
+</head>
+<body>
+
+<header>
+    <h1>Puerto Escondido, Oaxaca</h1>
+</header>
+
+<main>
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img class="img" src="images/PE1.png" alt="Description of Image 1">
+        </div>
+        <div class="mySlides">
+            <img class="img" src="images/enchiladas.png" alt="Description of Image 3">
+        </div>
+        <div class="mySlides">
+            <img class="img" src="images/hotel.png" alt="Description of Image 3">
+        </div>
+        <div class="mySlides">
+            <img class="img" src="images/turtle.png" alt="Description of Image 2">
+        </div>
+        
+
+        <!-- Add more slides as needed -->
+
+        <!-- Navigation dots -->
+        <div style="text-align: center; margin-top: 20px;">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <!-- Add more dots for additional slides -->
+        </div>
+    </div>
+
+    <div>
+        <h2>Best Places to Visit</h2>
+        <ul>
+            <li>Zicatela Beach</li>
+            <li>Carrizalillo Beach</li>
+            <li>Bacocho Beach</li>
+            <li>Laguna de Manialtepec</li>
+            <!-- Add more places as needed -->
+        </ul>
+    </div>
+
+    <div>
+        <h2>Best Restaurants</h2>
+        <ul>
+            <li>La Olita</li>
+            <li>El Espadin Verde</li>
+            <li>Almoraduz</li>
+            <li>Ristorante & Pizzeria La Palapa</li>
+            <!-- Add more restaurants as needed -->
+        </ul>
+    </div>
+
+    <div>
+        <h2>Activites</h2>
+        <ul>
+            <li>Dolphin cruise</li>
+            <li> Snorkaling</li>
+            <li>Release Sea Turles in Playa Bacocho</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Local Cuisine</h2>
+        <ul>
+        <li>Don't miss the opportunity to try the local Oaxacan cuisine, including delicious mole, tlayudas, and mezcal.</li>
+        </ul>
+    </div>
+
+    <!-- Add more divs for attractions, activities, etc. -->
+
+</main>
+
+<script>
+    // JavaScript for the image slideshow
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slideIndex++;
+
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+
+        setTimeout(showSlides, 3000); // Change slide every 2 seconds
+    }
+</script>
+
+</body>
+</html>

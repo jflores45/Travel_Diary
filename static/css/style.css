@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f4f4f4; */
+    background-color:#f4efef;
+   
+}
+
+header {
+    /* background-color: #333; */
+    background-color:#f4efef;
+    color: black;
+    text-align: center;
+    padding: 1em 0;
+    box-shadow: 0 3px 10px rgba(116, 28, 28, 0.292);
+
+}
+h1{
+    font-family:monospace;
+    font-size:xx-large;
+    font-weight: 100;
+}
+h2{
+    font-family:monospace;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.diary,
+.future {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr; /* Single column by default */
+}
+
+.entry {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(116, 28, 28, 0.292);
+    transition: all 0.s ease-in-out;
+}
+
+.entry img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.entry p{
+    line-height: 2;
+    font-size: 18px;
+}
+.entry:hover {
+    border: 2px solid #676161;
+}
+a{
+    font-style: none;
+}
+form {
+    display: grid;
+    grid-gap: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+textarea {
+    resize: vertical;
+}
+a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from the parent, or you can set it to a specific color */
+}
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#tripForm{
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px rgba(116, 28, 28, 0.292);
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+#map {
+    height: 400px;
+    padding: 20;
+    width: 100%;
+    margin-top: auto;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 3px rgba(116, 28, 28, 0.292);
+}
+/* Media query for desktop view */
+@media screen and (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+    }
+    .diary,
+    .future {
+        grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+    }
+}

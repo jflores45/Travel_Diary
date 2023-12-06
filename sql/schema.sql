@@ -1,0 +1,18 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE trips (
+    tripid INTEGER PRIMARY KEY AUTOINCREMENT,
+    location VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    caption TEXT NOT NULL,
+    image_filename VARCHAR(255),
+    created DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE future_plans (
+    planid INTEGER PRIMARY KEY AUTOINCREMENT,
+    tripid INT,
+    plan_name VARCHAR(255) NOT NULL,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (tripid) REFERENCES trips(tripid) ON DELETE CASCADE
+);

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago Travel Guide</title>
+    <link rel="stylesheet" href="static/css/style_2.css">
+    <!-- Add your CSS link or style here -->
+</head>
+<body>
+
+<header>
+    <h1>Chicago</h1>
+</header>
+
+<main>
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img class="img" src="images/C1.png" alt="Description of Image 1">
+        </div>
+
+        <div class="mySlides">
+            <img class="img" src="images/C2.png" alt="Description of Image 2">
+        </div>
+
+        <div class="mySlides">
+            <img class="img" src="images/C3.png" alt="Description of Image 3">
+        </div>
+        <!-- Add more slides as needed -->
+
+        <!-- Navigation dots -->
+        <div style="text-align: center; margin-top: 20px;">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <!-- Add more dots for additional slides -->
+        </div>
+    </div>
+    <br>
+    <div>
+        <h2>Best Places to Visit</h2>
+        <ul>
+            <li>Millennium Park</li>
+            <li>The Art Institute of Chicago</li>
+            <li>Navy Pier</li>
+            <li>Willis Tower Skydeck</li>
+            <!-- Add more places as needed -->
+        </ul>
+    </div>
+
+    <div>
+        <h2>Best Restaurants</h2>
+        <ul>
+            <li>Deep Dish Pizza at Giordano's</li>
+            <li>Alinea</li>
+            <li>The Purple Pig</li>
+            <li>Portillo's Hot Dogs</li>
+            <!-- Add more restaurants as needed -->
+        </ul>
+    </div>
+
+    <div>
+        <h2>Local Cuisine</h2>
+        <ul>
+            <li>Indulge in Chicago's famous deep-dish pizza, Chicago-style hot dogs, and diverse culinary offerings.</li>
+        </ul>
+    </div>
+
+    <!-- Add more sections for attractions, activities, etc. -->
+<script>
+    // JavaScript for the image slideshow
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slideIndex++;
+
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+
+        setTimeout(showSlides, 3000); // Change slide every 2 seconds
+    }
+</script>
+</main>
+
+</body>
+</html>

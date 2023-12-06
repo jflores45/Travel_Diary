@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Travel Diary</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYd4gr3no_VCQgTKCQ72ZaGiFD8sa_oO4&callback=initMap" async defer></script> -->
+</head>
+
+<body>
+    <header>
+        <h1>Travel Diary</h1>
+    </header>
+
+    <main>
+        <div class="scrollable-container">
+            <div class="diary">
+                <h1>My Trips &#128205;</h1><br>
+                <div class="entry">
+                    <a href="Puerto_E.html">
+                        <img src="images/PE1.png" alt="Trip 1">
+                        <h2>Puerto Escondido, Oaxaca</h2>
+                        <p>Date: 6/26/22</p>
+                        <p>Nuevas aventuras en la Oaxaca. Disfuntando el océano y tomando el sol.</p>
+                    </a>
+                </div>
+
+                <div class="entry">
+                    <a href="LA.html">
+                        <img src="images/LA1.png" alt="Trip 2">
+                        <h2>Los Angeles, California</h2>
+                        <p>Date: 2/16/18</p>
+                        <p>My first time seeing the ocean and sunbathing under this beautiful sunset! :D</p>
+                    </a>
+                </div>
+
+                <div class="entry">
+                    <a href="CHI.html">
+                        <img src="images/C1.png" alt="Trip 2">
+                        <h2>Chicago, IL</h2>
+                        <p>Date: None </p>
+                        <p>Home &#9825;</p>
+                    </a>
+                </div>
+            </div>
+            <br>
+            <div class="future">
+                <h1>Future Trips &#128205;</h1> <br>
+                <div class="entry">
+                    <a href="Paris.html">
+                        <img src="images/P1.png" alt="Trip">
+                        <h2>Paris</h2>
+                        <p>Date: Future</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="map"></div> -->
+        <div class="add-trip">
+            <h2>Add Trip</h2>
+            <form id="tripForm" enctype="multipart/form-data">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            
+                <label for="memorableMoments">Caption:</label>
+                <textarea id="memorableMoments" name="memorableMoments" rows="4" required></textarea>
+              
+                <label for="section">Select Section:</label>
+                <select id="section" name="section">
+                    <option value="diary"> Taken Trip</option>
+                    <option value="future">Future Trip</option>
+                </select>
+
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            
+                <button type="button" onclick="addTrip()">Add Trip</button>
+            </form>
+            <br><br>
+             <div id="map"></div>
+        </div>
+
+        <!-- <div id="map"></div> -->
+    </main>
+   
+    <script>
+     function initMap() {
+            // Confirm that this function is being called
+            console.log('Map initialized');
+
+            // Create a map centered at a default location
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 0, lng: 0}, // Set your default center coordinates
+                zoom: 2 // Adjust the default zoom level
+            });
+
+            // Add markers for places you've visited
+            var markers = [
+                {lat: 16.8531, lng: -99.8237, title: 'Puerto Escondido, Oaxaca'},
+                {lat: 34.0522, lng: -118.2437, title: 'Los Angeles, California'},
+                {lat: 41.8781, lng: -87.6298, title: 'Chicago, IL'}
+                // Add more markers as needed
+            ];
+
+            markers.forEach(function(marker) {
+                new google.maps.Marker({
+                    position: marker,
+                    map: map,
+                    title: marker.title
+                });
+            });
+            console.log('Map');
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYd4gr3no_VCQgTKCQ72ZaGiFD8sa_oO4&callback=initMap" async defer></script>
+    <script src="/static/js/myjs.js"></script>
+</body>
+</html>
+
+
+
+<!-- version without apis  -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Travel Diary</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/static/js/myjs.js"></script>
+    
+    <script>
+        function initMap() {
+            // Create a map centered at a default location
+            var map = L.map('map').setView([0, 0], 2); // Default center and zoom level
+    
+            // Add a tile layer from OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+    
+            // Add markers for places you've visited
+            var markers = [
+                {lat: 16.8531, lng: -99.8237, title: 'Puerto Escondido, Oaxaca'},
+                {lat: 34.0522, lng: -118.2437, title: 'Los Angeles, California'},
+                {lat: 41.8781, lng: -87.6298, title: 'Chicago, IL'}
+                // Add more markers as needed
+            ];
+    
+            markers.forEach(function(marker) {
+                L.marker([marker.lat, marker.lng]).addTo(map)
+                    .bindPopup(marker.title);
+            });
+        }
+        
+        // Call the initMap function when the page is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            initMap();
+        });
+    </script>
+</body>
+</html> -->
